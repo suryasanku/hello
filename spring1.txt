@@ -1,0 +1,50 @@
+package com.application.project.hi;
+
+import java.util.ArrayList;
+import java.util.*;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class helper {
+	ArrayList<items> list=new ArrayList<>();
+	ArrayList<items> list1=new ArrayList<>();
+	ArrayList<items> list2=new ArrayList<>();
+	HashMap<String,ArrayList<items>> map=new HashMap<>();
+	public void someMethod() {
+		items item1=new items("bahubali","RRR","Maryadaramanna",1);
+		items item2=new items("rangasthalam","pushpa","aarya2",2);
+		items item3=new items("khaidi no 150","akhil","intelligent",3);
+		list.add(item1);
+		list1.add(item2);
+		list2.add(item3);
+		map.put("Rajamouli",list);
+		map.put("sukumar", list1);
+		map.put("vv vinayak", list2);
+
+	}
+
+	public HashMap<String,ArrayList<items>> methodNew(){
+
+		
+		return map;
+		
+		
+		
+	}
+	public ArrayList<items> secondMethod(String id){
+		return map.get(id);
+	}
+	
+	/*public ArrayList<items>  methodNew(){
+		ArrayList<items> list=new ArrayList<>();
+		items item1=new items("priyanka","Hyderabad","impressico");
+		items item2=new items("surya","Tadepalligudem","impressico");
+		items item3=new items("anusha","Hyderabad","impressico");
+		list.add(item1);
+		list.add(item2);
+		list.add(item3);
+		return list;	
+	}*/
+
+}
