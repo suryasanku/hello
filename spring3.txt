@@ -1,0 +1,44 @@
+package com.application.project.hi;
+
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import java.util.*;
+
+@RestController
+public class NewPackage {
+	
+	@Autowired
+	private helper newHelper;
+	@RequestMapping("/hell")
+	
+	public HashMap<String,ArrayList<items>> method(){
+		return newHelper.methodNew();
+		
+	}
+    @RequestMapping("/hello")
+	
+	public String method1(){
+		return "hi";
+		
+	}
+    @RequestMapping("/hi/{id}")
+    public  ArrayList<items>  newMethod(@PathVariable String id) {
+    	newHelper.someMethod();
+    	return newHelper.secondMethod(id);
+    }
+	
+	/*public HashMap<String,String> method() {
+		HashMap<String,String>map=new HashMap<>();
+		map.put("name", "surya");
+		map.put("age", "23");
+		map.put("sex", "male");
+		map.put("job", "software");
+		return map;
+		
+	}*/
+	
+	
+
+}
